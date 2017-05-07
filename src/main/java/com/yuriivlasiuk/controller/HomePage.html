@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+	<head>
+		<meta charset="utf-8" />
+		<title>Apache Wicket Quickstart</title>
+
+		<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="screen"/>
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+		<script src="js/script.js"></script>
+	</head>
+	<body id="page">
+		<div id="container">
+			<form wicket:id="form">
+				<div class="row">
+					<input class="col-md-12" wicket:id="resultField" id="resultField" type="text"  value="text">
+				</div>
+				<div class="row">
+					<input class="col-md-3 btn btn-default" type="button" value="C" onclick="removeResultField()" title="Remove result field">
+					<input class="col-md-3 btn btn-default" type="button" value="+/-" onclick="changeSign()" title="Change sign">
+					<input class="col-md-3 btn btn-default" type="button" value="<" onclick="removeLastOperation()" title="Remove last operation">
+					<input class="col-md-3 btn btn-default" type="button" value="/" onclick="addOperation('/')">
+				</div>
+				<div class="row">
+					<input class="col-md-3 btn btn-default" type="button" value="(" onclick="addOperation('(')">
+					<input class="col-md-3 btn btn-default" type="button" value=")" onclick="addOperation(')')">
+					<input class="col-md-3 btn btn-default" type="button" value="X^Y" onclick="addOperation('^')" title="Exponentiation">
+					<input class="col-md-3 btn btn-default" type="button" value="Pi" onclick="addOperation('3.14')" title="Pi constant">
+				</div>
+				<div class="row">
+					<input class="col-md-3 btn btn-default" type="button" value="7" onclick="addOperation('7')">
+					<input class="col-md-3 btn btn-default" type="button" value="8" onclick="addOperation('8')">
+					<input class="col-md-3 btn btn-default" type="button" value="9" onclick="addOperation('9')">
+					<input class="col-md-3 btn btn-default" type="button" value="*" onclick="addOperation('*')">
+				</div>
+				<div class="row">
+					<input class="col-md-3 btn btn-default" type="button" value="4" onclick="addOperation('4')">
+					<input class="col-md-3 btn btn-default" type="button" value="5" onclick="addOperation('5')">
+					<input class="col-md-3 btn btn-default" type="button" value="6" onclick="addOperation('6')">
+					<input class="col-md-3 btn btn-default" type="button" value="-" onclick="addOperation('-')">
+				</div>
+				<div class="row">
+					<input class="col-md-3 btn btn-default" type="button" value="1" onclick="addOperation('1')">
+					<input class="col-md-3 btn btn-default" type="button" value="2" onclick="addOperation('2')">
+					<input class="col-md-3 btn btn-default" type="button" value="3" onclick="addOperation('3')">
+					<input class="col-md-3 btn btn-default" type="button" value="+" onclick="addOperation('+')">
+				</div>
+				<div class="row">
+					<input class="col-md-6 btn btn-default" type="button" value="0" onclick="addOperation('0')">
+					<input class="col-md-3 btn btn-default" type="button" value="." onclick="addOperation('.')">
+					<input class="col-md-3 btn btn-default" type="button" wicket:id="calculateButton" value="=" title="Calculate">
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
